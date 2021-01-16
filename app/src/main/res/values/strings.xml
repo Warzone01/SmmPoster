@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SmmPoster</string>
+    <string name="welcome_text">SMM Poster</string>
+    <string name="enter_button">Войти</string>
+    <string name="post_item_description">Description</string>
+    <string name="post_item_date">date</string>
+    <string name="date_for_posted">Post date</string>
+    <string name="search_text">Search</string>
+    <string name="empty_list_text">У Вас ещё нет отложенных постов</string>
+</resources>
