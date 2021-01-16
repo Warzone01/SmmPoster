@@ -49,5 +49,6 @@ class LoginActivity : MvpAppCompatActivity(), LoginView {
     override fun openPosts() {
         startActivity(Intent(this, ShowPostActivity::class.java))
         endLoading()
+        finish()
     }
 }

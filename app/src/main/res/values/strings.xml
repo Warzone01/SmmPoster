@@ -7,4 +7,5 @@
     <string name="date_for_posted">Post date</string>
     <string name="search_text">Search</string>
     <string name="empty_list_text">У Вас ещё нет отложенных постов</string>
+    <string name="post_text_edit_hint">Текст поста</string>
 </resources>
