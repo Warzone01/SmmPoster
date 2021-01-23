@@ -10,6 +10,7 @@ interface ShowPostView: MvpView {
     fun startLoading()
     fun endLoading()
     fun showError(string: String)
+    fun showAllNotes()
     fun showEmptyList()
     fun clickListener()
     fun addNewPost()

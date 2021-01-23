@@ -19,7 +19,7 @@ abstract class PostsDatabase:RoomDatabase() {
                 postsDatabase = Room.databaseBuilder(
                         context,
                         PostsDatabase::class.java,
-                        "/sdcard/SmmPoster/db/posts_db"
+                        "postsDb"
                 ).build()
             }
             return postsDatabase as PostsDatabase

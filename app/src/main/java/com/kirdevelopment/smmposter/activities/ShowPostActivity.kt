@@ -54,6 +54,10 @@ class ShowPostActivity : MvpAppCompatActivity(), ShowPostView {
 
     }
 
+    override fun showAllNotes() {
+        
+    }
+
     override fun showEmptyList() {
         emptyListText.visibility = View.VISIBLE
     }

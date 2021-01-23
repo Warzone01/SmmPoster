@@ -1,15 +1,13 @@
 package com.kirdevelopment.smmposter.room.dao
 
+import androidx.room.*
 import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
 import com.kirdevelopment.smmposter.room.entities.Post
 
 @Dao
 interface Dao {
-    @Insert
-    fun insertAll(posts: Post)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insert(posts: Post)
 
     @Delete
     fun delete(post: Post)

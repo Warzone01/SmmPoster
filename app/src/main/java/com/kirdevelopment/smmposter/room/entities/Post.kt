@@ -13,4 +13,12 @@ class Post(@PrimaryKey(autoGenerate = true) var id: Int?,
     @ColumnInfo(name = "img_path") var imgPath: String,
     @ColumnInfo(name = "vid_path") var videoPath: String,
     @ColumnInfo(name = "audio_path") var audioPath: String
-)
+){
+    constructor():this(null,
+    "",
+    "",
+    "",
+    "",
+    "",
+    "")
+}
