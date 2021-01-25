@@ -15,6 +15,7 @@
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="5dp"
         android:src="@drawable/ic_search"
+        android:visibility="visible"
         android:contentDescription="@string/app_name"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,6 +42,7 @@
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/postItemDescription"
         app:layout_constraintStart_toEndOf="@id/itemImagePreview"/>
 
     <TextView

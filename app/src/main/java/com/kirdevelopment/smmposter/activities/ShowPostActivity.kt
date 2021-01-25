@@ -1,6 +1,7 @@
 package com.kirdevelopment.smmposter.activities
 
 import android.content.Intent
+import android.content.SyncRequest
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -9,18 +10,24 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kirdevelopment.smmposter.R
+import com.kirdevelopment.smmposter.adapters.PostListAdapter
 import com.kirdevelopment.smmposter.presenters.ShowPostPresenter
+import com.kirdevelopment.smmposter.room.entities.Post
 import com.kirdevelopment.smmposter.views.ShowPostView
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 
 class ShowPostActivity : MvpAppCompatActivity(), ShowPostView {
 
+    val REQUEST_CODE_SHOW_NOTE: Int = 3
+
     private lateinit var posterRV: RecyclerView
     private lateinit var searchEditText: EditText
     private lateinit var menuIcon: ImageView
     private lateinit var btnCreatePost: ImageView
     private lateinit var emptyListText: TextView
+    private lateinit var postAdapter: PostListAdapter
+    private var postList: ArrayList<Post> = ArrayList()
 
     @InjectPresenter
     lateinit var showPostPresenter: ShowPostPresenter
@@ -36,6 +43,10 @@ class ShowPostActivity : MvpAppCompatActivity(), ShowPostView {
         emptyListText = findViewById(R.id.showPostTextEmpty)
 
         posterRV.layoutManager = LinearLayoutManager(this@ShowPostActivity)
+        postAdapter = PostListAdapter(postList)
+        posterRV.adapter = postAdapter
+
+        showAllNotes(REQUEST_CODE_SHOW_NOTE)
 
         btnCreatePost.setOnClickListener{
             addNewPost()
@@ -54,7 +65,9 @@ class ShowPostActivity : MvpAppCompatActivity(), ShowPostView {
 
     }
 
-    override fun showAllNotes() {
+    override fun showAllNotes(request: Int) {
+
+        showPostPresenter.getPosts(request, this,postAdapter, false, postList)
         
     }
 
